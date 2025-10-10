@@ -1,13 +1,17 @@
-export default function () {
+import type { Song } from "../types/song"
 
+
+export default function (props: Props) {
+
+    
     return (
         <div className="Main-container">
-            <img src="" alt="" />
+            <img src={props.song.image.url} alt="" />
             <div>
                 <div>
                     <div className="Title">
-                        <h1>Titulo de la Cancion</h1>
-                        <p>Artista</p>
+                        <h1>{props.song.title}</h1>
+                        <p>{props.song.author}</p>
                     </div>
 
                     <div className="Card-panel">
@@ -28,4 +32,8 @@ export default function () {
         </div>
     )
 
+}
+
+interface Props {
+    song: Song
 }

@@ -6,7 +6,11 @@ import Songcard from '../components/Songcard'
 import Album from '../components/Album'
 import Video from '../components/Video'
 import Lyrics from '../components/Lyrics'
-import Playlist from '../components/Playlist'
+import Playlisttop from '../components/Playlisttop'
+import Simplesongcard from '../components/Simplesongcard'
+import axios from 'axios';
+
+const canciones = await axios.get('https://api.institutoalfa.org/api/songs')
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -24,7 +28,7 @@ import Playlist from '../components/Playlist'
 				<div class="Visuals">
 
 					<div class="Current-song">
-						<Songcard/>
+						Songcard
 						<Album/>
 					</div>
 
@@ -41,10 +45,28 @@ import Playlist from '../components/Playlist'
 
 			</div>
 
-			<Playlist/>
+			<div class="Playlist">
+				<Playlisttop/>
+				<div class="Song-list">
+					{
+						canciones.data.songs.map(
+							song => <Simplesongcard 
+							client:visible song={song} />)
+					}
+				</div>
+
+			</div>
 		
 		</div>
 
 		<Footer/>
 	</div>
 </Layout>
+
+<style>
+	
+	.Container {
+		display: flex;
+	}
+
+</style>
