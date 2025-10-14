@@ -1,0 +1,27 @@
+.Navbar-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #051426;
+    height: 60px;
+}
+
+h1 {
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.Button-cont {
+    display: flex;
+}
+
+.Menu-btn {
+    background: none;
+    border: 0px;
+    padding: 20px;
+}
+
+.Config-btn {
+    background: none;
+    border: 0px;
+    padding: 20px;
+}

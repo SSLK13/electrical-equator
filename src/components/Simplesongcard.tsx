@@ -8,12 +8,12 @@ export default function (props: Props) {
         alert(props.song.title)
     }
     return (
-        <div className="Main-container" onClick={ClickHandler}>
-            <img src={props.song.image.url} alt=""/>
+        <div onClick={ClickHandler} style={{display: 'flex', gap: '10px'}} className="Card">
+            <img src={props.song.image.url} alt="" style={{height:'64px', paddingLeft:'10px', padding: '5px 10px'}}/>
             <div>
                 <div>
                     <div className="Title">
-                        <h1>{props.song.title}</h1>
+                        <h1 style={{fontSize: '18px'}}>{props.song.title}</h1>
                         <p>{props.song.author}</p>
                     </div>
                 </div>

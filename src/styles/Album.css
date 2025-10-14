@@ -1,0 +1,17 @@
+.Album-container {
+    background-color: #0A2140;
+    text-align: center;
+    border-radius: 10px;
+    width: 40%;
+}
+
+.Album-title {
+    font-size: clamp(14px, 1vw, 40px);
+    padding-bottom: 10px;
+}
+
+.Album-img {
+    height: 70%;
+    padding-top: 10px;
+    border-radius: 20px;
+}
