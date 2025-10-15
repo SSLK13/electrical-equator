@@ -1,7 +1,7 @@
 import type { Song } from "../types/song"
 import { useSong } from "../store"
 
-import '../styles/album.css'
+import '../styles/Album.css'
 
 
 export default function (props: Props) {
