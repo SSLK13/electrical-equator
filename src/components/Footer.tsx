@@ -1,4 +1,7 @@
 import '../styles/Footer.css'
+
+import {useSong} from '../store'
+
 import { FaUserCircle } from 'react-icons/fa';
 import { FaPlay } from 'react-icons/fa6';
 import { BiSkipNext } from 'react-icons/bi';
@@ -8,12 +11,17 @@ import { BiDownload } from 'react-icons/bi';
 import { BiSolidVolumeFull } from 'react-icons/bi';
 
 export default function () {
+    const {song} = useSong()
 
     return (
         <div className="Footer-container">
             <div className="User-cont">
-                <button><FaUserCircle style={{fontSize: '32px', color: 'white'}} /></button>
-                <p>UserName</p>
+                <img src={song?.image.url} alt="" style={{
+                                                        height: '64px',
+                                                        padding: '10px',
+                                                        borderRadius: '20px'
+                                                        }} />
+                <p>{song?.title}</p>
             </div>
 
             <div className="Control-cont">

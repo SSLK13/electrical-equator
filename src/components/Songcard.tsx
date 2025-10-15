@@ -1,4 +1,5 @@
 import type { Song } from "../types/song"
+import { useSong } from "../store";
 
 import '../styles/Songcard.css'
 
@@ -11,13 +12,15 @@ import { BiHeart } from 'react-icons/bi';
 import { BiSolidHeart } from 'react-icons/bi';
 import { BiShareAlt } from 'react-icons/bi';
 
+
 export default function (props: Props) {
+    const {song} = useSong()
 
     return (
         <div className="Main-container">
             
             
-            <img src={props.song.image.url} alt="" 
+            <img src={song?.image.url} alt="" 
                 style={
                         {height:'90%',
                         width:'auto',
@@ -31,8 +34,8 @@ export default function (props: Props) {
             <div className="Second-cont">
                 <div className="Third-cont">
                     <div className="Song-title" style={{paddingLeft: '10px'}}>
-                        <h1 style={{fontSize: 'clamp(16px, 5vw, 40px)'}}>{props.song.title}</h1>
-                        <p style={{fontSize: 'clamp(14px, 1vw, 40px)'}} >{props.song.author}</p>
+                        <h1 style={{fontSize: 'clamp(16px, 5vw, 40px)'}}>{song?.title}</h1>
+                        <p style={{fontSize: 'clamp(14px, 1vw, 40px)'}} >{song?.author}</p>
                     </div>
 
                     <div className="Card-panel">

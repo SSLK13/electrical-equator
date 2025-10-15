@@ -3,12 +3,12 @@ import { create } from "zustand";
 
 export const useSong = create(
   function (set): {
-    song: ISong | null,
-    updateSong: (song: ISong) => void
+    song: Song | null,
+    updateSong: (song: Song) => void
   } {
     return {
       song: null,
-      updateSong: function (newSong: ISong) {
+      updateSong: function (newSong: Song) {
         set({ song: newSong })
       }
     }

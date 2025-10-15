@@ -1,14 +1,18 @@
 import type { Song } from "../types/song"
 import '../styles/Simplesongcard.css'
+import { useSong } from "../store"
+
 
 
 export default function (props: Props) {
+    const {updateSong} = useSong()
 
-    function ClickHandler() {
-        alert(props.song.title)
+    function clickHandler () {
+        updateSong(props.song)
     }
+
     return (
-        <div onClick={ClickHandler} style={{display: 'flex', gap: '10px'}} className="Card">
+        <div onClick={clickHandler} style={{display: 'flex', gap: '10px'}} className="Card">
             <img src={props.song.image.url} alt="" style={{height:'64px', paddingLeft:'10px', padding: '5px 10px'}}/>
             <div>
                 <div>
