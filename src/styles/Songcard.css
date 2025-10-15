@@ -17,6 +17,11 @@
     width: 100%;
 }
 
+.Main-container {
+    overflow: hidden;
+    width: 50%;
+}
+
 .Social-buttons {
     width: 10%;
     display: flex;
