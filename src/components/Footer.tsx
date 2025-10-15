@@ -26,6 +26,7 @@ export default function () {
 
             <div className="Control-cont">
                 <div className="Panel">
+                    <audio src={song?.audio.url} controls></audio>
                     <button> <BiDownload style={{fontSize: '18px', color: 'white'}}/> </button>
                     <button> <BiSkipPrevious style={{fontSize: '32px', color: 'white'}}/> </button>
                     <button> <FaPlay style={{fontSize: '22px', color: 'white'}} /> </button>
